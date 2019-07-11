@@ -39,6 +39,9 @@ public class QnaService implements BoardService {
 		// fname = fileSaver.saveFile(realPath, multipartFile);
 		System.out.println(realPath);
 		ArrayList<FileDTO> files = new ArrayList<FileDTO>();
+		if(res>0) {
+			throw new Exception();
+		}
 		
 		for(MultipartFile f : multipartFiles) {
 			// 폼에서 파일첨부 안했을 때 에러 방지
