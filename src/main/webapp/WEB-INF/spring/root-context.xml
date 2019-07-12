@@ -29,11 +29,6 @@
 	 -->
 	
 	
-	<!-- <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy> -->
-	<bean id="propertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="location" value="classpath:/properties/DataSource.properties" />
-	</bean>
-	
 	
 
 </beans>

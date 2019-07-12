@@ -59,7 +59,7 @@
 	<!-- <beans:import resource="classpath:/spring/context-file.xml"/>
 	<beans:import resource="classpath:/spring/context-data.xml"/>
 	<beans:import resource="classpath:/spring/context-common.xml"/> -->
-	<tx:annotation-driven/>
+	<!-- <tx:annotation-driven/> -->
 	<aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
 	
 	<!-- <beans:import resource="classpath:/spring/config-context.xml"/> -->

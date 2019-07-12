@@ -31,17 +31,17 @@
 	</bean>
 	
 	<!-- trancation Advice 설정 -->
-	<!-- <tx:advice id="txAdvice" transaction-manager="txManger">
+	<tx:advice id="txAdvice" transaction-manager="txManger">
 		<tx:attributes>
 			<tx:method name="*" rollback-for="Exception"/>
 		</tx:attributes>	
-	</tx:advice> -->
+	</tx:advice>
 	
 	<!-- pointcut 설정 -->
-	<!-- <aop:config>
+	<aop:config>
 		<aop:pointcut expression="execution(* com.iu..*Service.set*(..))" id="requiredTx"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="requiredTx" />
-	</aop:config> -->
+	</aop:config>
 	
 	
 

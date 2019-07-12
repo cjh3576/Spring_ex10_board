@@ -16,8 +16,6 @@ import com.iu.file.FileDAO;
 import com.iu.file.FileDTO;
 import com.iu.util.FileSaver;
 import com.iu.util.PageMaker;
-
-@Transactional
 public class QnaService implements BoardService {
 
 	@Inject
