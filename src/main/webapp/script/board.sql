@@ -59,16 +59,35 @@ create table files(
 	oname varchar2(2000)
 )
 
-create table notice(
+create table productqna(
 	num number(8),
 	title varchar2(400),
 	writer varchar2(400),
 	contents clob,
 	reg_date date,
 	hit number(8),
-	constraint notice_num_pk primary key (num)
+	ref number(8),
+	step number(8),
+	depth number(8),
+	pid varchar2(400),
+	constraint pqna_num_pk primary key (num)
 )
+select * from productqna
+select * from product
 
+
+insert into productqna values(product_seq.nextval, 't3','w3','c3',sysdate,0,product_seq.currval,0,0,'B1563153112339' )
+ B1563153112339 B        123     123 123         <p>123<img src="/s10/resources/summernote/94a3195b-3510-4b4f-b240-913b2ee11ee4.jpg" style="width: 540px;"></p>           1 2019-07-15 10:11:52.0
+		
+ 		SELECT * FROM
+ 		(SELECT ROWNUM R, P.* FROM
+ 		(SELECT * FROM PRODUCTQNA WHERE pid = 'B1563153112339' ORDER BY ref DESC step ASC) P)
+ 		WHERE R BETWEEN 1 AND 10
+ B1563154560792
+ 	select * from productqna where pid='B1563153112339'
+ select * from productqna
+commit
+select * from seq
 create sequence notice_seq
 start with 1
 increment by 1

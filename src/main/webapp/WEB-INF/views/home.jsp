@@ -16,6 +16,7 @@
 <c:choose>
 	<c:when test="${not empty member}">
 		<a href="./member/memberLogout">logout</a>
+		<a href="./cart/cartList">Cart List</a>
 		<c:if test="${member.grade eq '0'}">
 			<a href="./member/memberAdmin">Admin Page</a>
 		</c:if>
@@ -25,6 +26,9 @@
 		<a href="./member/memberLogin">Login</a>
 	</c:otherwise>
 </c:choose>
+
+<a href="./mall/productWrite">Product Write</a>
+<a href="./mall/productList">Product List</a>
 
 </body>
 </html>

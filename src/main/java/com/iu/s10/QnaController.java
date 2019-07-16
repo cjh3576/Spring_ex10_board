@@ -105,8 +105,9 @@ public class QnaController {
 
 	//write
 	@RequestMapping(value = "qnaWrite", method = RequestMethod.GET)
-	public String setWrite(Model model)throws Exception{
+	public String setWrite(BoardDTO boardDTO, Model model)throws Exception{
 		//model.addAttribute("board", "qna");
+		boardDTO.setTitle("SEEEEEEEEEEEEEEE");
 		return "board/boardWrite";
 	}
 	

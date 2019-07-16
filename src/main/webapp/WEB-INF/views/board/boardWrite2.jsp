@@ -13,24 +13,30 @@
 <body>
 	<div class="container">
 		<h1>${board} Write Form</h1>
-		
-		<form:form commandName="boardDTO">
-			<div class="form-group">
+		<form id="frm" action="./${board}Write" method="post" enctype="multipart/form-data">
+		    
+		    <div class="form-group">
 		      <label for="writer">Writer:</label>
-		      <form:input readonly="true" value="${member.id}"   class="form-control" path="writer"/>
+		      <input type="text" class="form-control" id="writer" readonly="readonly" value="${member.id}"  name="writer">
 		    </div>
 		    
 		    <div class="form-group">
 		      <label for="title">Title:</label>
-		      <form:input placeholder="Enter title" class="form-control" path="title"/>
+		      <input type="text" class="form-control" id="title" placeholder="Enter title" name="title">
 		    </div>
-			
-			<div class="form-group">
+		    
+		     <div class="form-group">
 		      <label for="contents">Contents:</label>
-			<form:textarea cssClass="form-control" path="contents" id="summernote2"/>
-			</div>
-		</form:form>
-		
+		      <textarea class="form-control" id="summernote" rows="15" cols="" name="contents"></textarea>
+		    </div>
+		    
+		    <div>
+		    	<input type="button" class="btn btn-info" id="add" value="ADD FILE">
+		    	<div id="files"></div>
+		    </div>
+		    
+		    <input type="button" id="write" class="btn btn-default" value="Write">
+		  </form>
 	
 	</div>
 	
