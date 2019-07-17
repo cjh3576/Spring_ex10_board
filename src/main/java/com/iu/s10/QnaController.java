@@ -19,7 +19,6 @@ import com.iu.board.BoardDTO;
 import com.iu.board.qna.QnaDTO;
 import com.iu.board.qna.QnaService;
 import com.iu.util.PageMaker;
-import com.iu.validator.QnaDTOValidate;
 
 @Controller
 @RequestMapping(value = "/qna/")
@@ -27,8 +26,6 @@ public class QnaController {
 	
 	@Inject
 	private QnaService qnaService;
-	@Inject
-	private QnaDTOValidate qnaDTOValidate;
 	
 	//model.addAttribute("board","qna") 모든 메소드에
 	@ModelAttribute("board")
@@ -97,7 +94,6 @@ public class QnaController {
 		ModelAndView mv = new ModelAndView();
 		//검증
 		
-		qnaDTOValidate.validate(qnaDTO, bindingResult);
 		if(bindingResult.hasErrors()) {
 			mv.setViewName("board/boardWrite");
 		}else {
