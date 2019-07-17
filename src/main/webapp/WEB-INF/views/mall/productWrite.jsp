@@ -62,7 +62,7 @@
 		    	<div id="files"></div>
 		    </div>
 			
-			<button>Write</button>
+			<button class="btn btn-primary">Write</button>
 			
 			
 		</form:form>

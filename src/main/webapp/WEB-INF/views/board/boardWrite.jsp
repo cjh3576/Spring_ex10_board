@@ -14,29 +14,34 @@
 	<div class="container">
 		<h1>${board} Write Form</h1>
 		
-		<form:form commandName="boardDTO">
+		<form:form commandName="boardDTO" id="frm" enctype="multipart/form-data">
 			<div class="form-group">
 		      <label for="writer">Writer:</label>
 		      <form:input readonly="true" value="${member.id}"   class="form-control" path="writer"/>
+		      <form:errors path="writer"></form:errors>
 		    </div>
 		    
 		    <div class="form-group">
 		      <label for="title">Title:</label>
 		      <form:input placeholder="Enter title" class="form-control" path="title"/>
+		      <form:errors path="title"></form:errors>
 		    </div>
 			
 			<div class="form-group">
 		      <label for="contents">Contents:</label>
 			<form:textarea cssClass="form-control" path="contents" id="summernote2"/>
+			<form:errors path="contents"></form:errors>
 			</div>
 		</form:form>
-		
+		<button class="btn btn-primary" id="btn">Write</button>
 	
 	</div>
 	
 	<script type="text/javascript" src="../resources/js/summernote.js" ></script>
 	<script type="text/javascript">
-		
+		$('#btn').click(function(){
+			$('#frm').submit();
+		});
 		
 		
 		

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,22 +16,31 @@
 	<div class="container">
 		<h1>Member Join Form</h1>
 		
-		<form action="./memberJoin" method="post" enctype="multipart/form-data">
-		  <div class="form-group">
+		<form:form commandName="memberDTO" enctype="multipart/form-data" >
+		 <div class="form-group">
 		    <label for="id">ID:</label>
-		    <input type="text" class="form-control" id="id" name="id">
+		    <form:input path="id" cssClass="form-control"/>
+		    <form:errors path="id"></form:errors>
 		  </div>
 		  <div class="form-group">
 		    <label for="password">PASSWORD:</label>
-		    <input type="password" class="form-control" id="pw" name="pw">
+		    <form:password path="pw" cssClass="form-control"/>
+		    <form:errors path="pw"></form:errors>
+		  </div>
+		  <div class="form-group">
+		    <label for="password">PASSWORD Check:</label>
+		    <form:password path="pw2" cssClass="form-control"/>
+		    <form:errors path="pw2"></form:errors>
 		  </div>
 		  <div class="form-group">
 		    <label for="name">NAME:</label>
-		    <input type="text" class="form-control" id="name" name="name">
+		    <form:input path="name" cssClass="form-control"/>
+		    <form:errors path="name"></form:errors>
 		  </div>
 		  <div class="form-group">
-		    <label for="name">EMAIL:</label>
-		    <input type="email" class="form-control" id="email" name="email">
+		    <label for="email">EMAIL:</label>
+			<form:input path="email" cssClass="form-control"/>
+			<form:errors path="email"></form:errors>
 		  </div>
 		  
 		  
@@ -38,7 +49,9 @@
 		  </div>
 		  
 		  <button type="submit" class="btn btn-default">Join</button>
-		</form>
+		</form:form>
+		
+		 
 		
 	</div>
 

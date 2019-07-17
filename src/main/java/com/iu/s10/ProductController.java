@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -77,10 +78,12 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value = "productWrite", method = RequestMethod.POST)
-	public ModelAndView productWrite(ProductVO productVO,List<MultipartFile> f1, HttpSession session)throws Exception{
+	public ModelAndView productWrite(ProductVO productVO,List<MultipartFile> f1, HttpSession session, BindingResult bindingResult)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		int result = productService.setWrite(productVO, f1, session);
 		String message="Add Fail";
+		//검증
+		
 		if(result>0) {
 			message="Add Success";
 		}
