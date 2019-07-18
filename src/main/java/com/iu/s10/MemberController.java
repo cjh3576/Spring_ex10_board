@@ -58,7 +58,7 @@ public class MemberController {
 	
 	//회원가입 처리
 	@RequestMapping(value = "memberJoin", method = RequestMethod.POST)
-	public ModelAndView setWrite(@ModelAttribute@Valid MemberDTO memberDTO, MultipartFile photo, HttpSession session,BindingResult bindingResult)throws Exception{
+	public ModelAndView setWrite(@Valid MemberDTO memberDTO,BindingResult bindingResult, MultipartFile photo, HttpSession session)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		if(bindingResult.hasErrors()) {
 			mv.setViewName("member/memberJoin");
