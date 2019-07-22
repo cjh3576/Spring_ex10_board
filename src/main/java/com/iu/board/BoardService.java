@@ -6,7 +6,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.iu.file.FileDTO;
 import com.iu.util.PageMaker;
 
 public interface BoardService {
